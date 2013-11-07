@@ -23,7 +23,7 @@ use base "Email::Store::DBI";
 Email::Store::HashTag::Entity->table("mail_entity_hashtag");
 Email::Store::HashTag::Entity->columns( All => qw/ id entity hashtag /);
 Email::Store::HashTag::Entity->has_a("hashtag" => "Email::Store::HashTag");
-Email::Store::Hashtag::Entity->has_a("entity" => "Email::Store::Entity");
+Email::Store::HashTag::Entity->has_a("entity" => "Email::Store::Entity");
 
 Email::Store::Mail->has_many("hashtags" => "Email::Store::HashTag::Mail");
 Email::Store::Entity->has_many("hashtags" => "Email::Store::HashTag::Entity");

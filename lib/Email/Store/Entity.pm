@@ -10,15 +10,15 @@ use Module::Pluggable::Ordered
     search_path => ["Email::Store::Entity::Correlator"];
 Email::Store::Entity->set_sql(distinct_entity => q{
     SELECT     DISTINCT entity, id
-    FROM addressing
+    FROM mail_addressing
     WHERE name = ?    AND address = ?});
 Email::Store::Entity->set_sql(distinct_entity_for_name => q{
     SELECT     DISTINCT entity, id
-    FROM addressing
+    FROM mail_addressing
     WHERE name = ?});
 Email::Store::Entity->set_sql(distinct_entity_for_address => q{
     SELECT     DISTINCT entity, id
-    FROM addressing
+    FROM mail_addressing
     WHERE address = ?});
 sub on_store_order { 1 }
 sub on_store {
